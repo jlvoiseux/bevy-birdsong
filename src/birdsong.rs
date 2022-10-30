@@ -47,6 +47,10 @@ impl Birdsong {
         self.script_data.script = script;
         self.script_data.updated = true;
     }
+
+    pub fn get_curr_line(&mut self) -> usize {
+        return self.curr_line;
+    }
 }
 
 struct SettingsData {
