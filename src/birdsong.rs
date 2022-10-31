@@ -18,14 +18,16 @@ const DEFAULT_PORTRAIT_POSITION: Vec3 = Vec3::new(-425., 225., 1.);
 
 pub struct BirdsongPlugin;
 
-static INIT: &str = "init";
+static INIT_SETTINGS: &str = "init_settings";
+static INIT_SYSTEM: &str = "init_system";
 
 impl Plugin for BirdsongPlugin {
     fn build(&self, app:&mut App) {
         app
-            .add_startup_stage_before(StartupStage::Startup, INIT,  SystemStage::single_threaded())
-            .add_startup_system_to_stage(INIT, birdsong_setup_default_settings_system)
-            .add_startup_system(birdsong_setup_system)
+            .add_startup_stage_before(StartupStage::Startup, INIT_SETTINGS,  SystemStage::single_threaded())
+            .add_startup_system_to_stage(INIT_SETTINGS, birdsong_setup_default_settings_system)
+            .add_startup_stage_after(INIT_SETTINGS, INIT_SYSTEM,  SystemStage::single_threaded())
+            .add_startup_system_to_stage(INIT_SYSTEM, birdsong_setup_system)
             .add_system(birdsong_parse_script_system)
             .add_system(birdsong_handle_input_system)
             .add_system(birdsong_process_entry_system)
