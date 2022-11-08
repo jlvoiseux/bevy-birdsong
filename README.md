@@ -1,5 +1,6 @@
 # Birdsong
-Birdsong is a dialogue box manager for the [Bevy](https://github.com/bevyengine/bevy) game engine.
+Birdsong is a dialogue box system for the [Bevy](https://github.com/bevyengine/bevy) game engine.
+This project is currently a work in progress.
 
 ## Features
 - Highly customizable dialogue box text
