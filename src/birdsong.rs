@@ -3,7 +3,7 @@ use std::collections::HashMap;
 use std::time::Duration;
 use crate::components::{DialogueBoxComponent, VoiceComponent, PortraitComponent, BackgroundComponent, ChoiceCursorComponent, ChoiceItemComponent};
 
-const DEFAULT_FONT_PATH: &str = "fonts/Silver.ttf";
+const DEFAULT_FONT_PATH: &str = "fonts/PlayfairDisplay-Regular.ttf";
 const DEFAULT_FONT_SIZE: f32 = 45.;
 const DEFAULT_TEXT_COLOR: Color = Color::rgba(1., 1., 1., 1.);
 const DEFAULT_CURSOR_PATH: &str = "images/cursor.png";
